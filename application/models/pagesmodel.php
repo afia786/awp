@@ -8,6 +8,17 @@ class PagesModel extends CI_Model{
 	$query = $this->db->get('users');
 	return $query->result();
 	}
+
+	function insertUsers($fname,$lname){
+		$newUser = array(
+  
+      'firstname' => $fname ,
+      'lastname' => $lname 
+      
+   );
+
+   $this->db->insert('users', $newUser); 
+	}
 }
 
 
