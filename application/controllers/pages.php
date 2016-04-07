@@ -38,4 +38,23 @@ class Pages extends CI_Controller {
 
         }
 
+        public function updateUserForm($userid){
+
+                $page = 'updateUser';
+                $data['userid']=$userid;
+
+                $this->load->view('pages/'.$page, $data);
+        }
+
+        public function updateUser($userid){
+
+                $page = 'updateUser';
+                $data['userid']=$userid;
+
+                $this->load->model("PagesModel");
+                $this->PagesModel->updateUser($userid);
+
+                $this->load->view('pages/'.$page, $data);
+        }
+
 }

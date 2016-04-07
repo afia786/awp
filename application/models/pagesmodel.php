@@ -12,27 +12,31 @@ class PagesModel extends CI_Model{
 	function insertUsers($fname,$lname){
 		$newUser = array(
   
-      'firstname' => $fname ,
-      'lastname' => $lname 
+      		'firstname' => $fname ,
+      		'lastname' => $lname 
       
-   );
+   		);
 
-   $this->db->insert('users', $newUser); 
+		$this->db->insert('users', $newUser); 
+   	}
+
+
+
+	function updateUser($id){
+		$data=array();
+		$data=$this->input->post();
+
+		// unset($data['id']);
+
+		$this->db->where('id', $id);
+		$this->db->update('users', $data);
+		return true;
 	}
-
-	
 
 
 
 
 }
-
-
-
-
-
-
-
 
 
 ?>
