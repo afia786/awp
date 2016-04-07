@@ -19,7 +19,14 @@ class PagesModel extends CI_Model{
 
    $this->db->insert('users', $newUser); 
 	}
+
+	
+
+
+
+
 }
+
 
 
 

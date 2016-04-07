@@ -3,9 +3,10 @@
 <?php
 
 foreach($users as $user) {
-	echo $user->id . "</br>";
+	echo $user->id . " ";
 	echo $user->firstname;
-	echo $user->lastname;
+	echo $user->lastname . "</br>";
+
 }
 
 ?>
