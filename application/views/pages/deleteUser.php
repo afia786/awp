@@ -1,4 +1,4 @@
-<h1>delete a user</h1>
+<h1>deleted a user</h1>
 
 <?php
 
