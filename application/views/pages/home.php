@@ -7,6 +7,7 @@ foreach($users as $user) {
 	echo $user->firstname;
 	echo $user->lastname . " ";
 	echo "<a href=/index.php/pages/updateUserForm/".$user->id.">Edit</a> <br>";
+	echo "<a href=/index.php/pages/deleteUser/".$user->id.">Delete</a> <br>";
 
 }
 
