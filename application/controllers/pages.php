@@ -4,6 +4,7 @@ class Pages extends CI_Controller {
 	function __construct(){
 	parent::__construct();
 	$this->load->helper(array('form'));
+        $this->load->helper('url');
 	}
 
         public function view($page = 'home')
@@ -55,6 +56,25 @@ class Pages extends CI_Controller {
                 $this->PagesModel->updateUser($userid);
 
                 $this->load->view('pages/'.$page, $data);
+        }
+
+        public function deleteUserForm($userid){
+
+                $page = 'deleteUser';
+                $data['userid']=$userid;
+
+                $this->load->view('pages/'.$page, $data);
+        }
+
+
+        public function deleteUser($userid){
+
+                $page = 'deleteUser';
+                $data['userid']=$userid;
+                 $this->load->model("PagesModel");
+                $this->PagesModel->deleteUser($userid);
+
+                redirect('/pages/view', 'refresh');
         }
 
 }
