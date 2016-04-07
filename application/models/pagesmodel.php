@@ -33,6 +33,11 @@ class PagesModel extends CI_Model{
 		return true;
 	}
 
+	function deleteUser($id){
+		$this->db->where('id', $id);
+		$this->db->delete('users'); 
+	}
+
 
 
 
